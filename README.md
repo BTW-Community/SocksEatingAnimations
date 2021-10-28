@@ -5,4 +5,4 @@ This Addon for BTW adds a small visual enhancement. While holding down right cli
 
 # Credits
 
-Inspiratied by: [Eating Animation (Fabric)](https://www.curseforge.com/minecraft/mc-mods/eating-animation-fabric) 
+Inspiration by: [Eating Animation (Fabric)](https://www.curseforge.com/minecraft/mc-mods/eating-animation-fabric) 
