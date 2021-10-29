@@ -27,9 +27,11 @@ public class SEAItemFood extends FCItemFood {
         this.eatingProgressArray = eatingTextures;
     } 
     
-    public SEAItemFood(int iItemID, int iHungerHealed) {
+    public SEAItemFood(int iItemID, int iHungerHealed, float fSaturationModifier, String sItemName, String[] eatingTextures) {
     	super( iItemID, iHungerHealed, fSaturationModifier, false, sItemName );
-    	setUnlocalizedName( sItemName );
+    	 setMaxDamage( 0 ); //Disable progress bar
+         setUnlocalizedName( sItemName );
+         this.eatingProgressArray = eatingTextures;
 	}
 
 	@Override
@@ -92,7 +94,7 @@ public class SEAItemFood extends FCItemFood {
 	
 	@Override 
 	public Icon getIconFromDamage(int par1) { 
-		return this.iconArray[par1]; 
+		return this.iconArray[par1];
 	} 
 
 }

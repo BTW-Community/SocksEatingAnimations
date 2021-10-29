@@ -2,8 +2,12 @@ package net.minecraft.src;
 
 public class SEAItemFoodBowl extends SEAItemFood
 {
-    public SEAItemFoodBowl(int iItemID, int iHungerHealed) {
-		super(iItemID, iHungerHealed);
+    public SEAItemFoodBowl(int iItemID, int iHungerHealed, float fSaturationModifier, boolean bWolfMeat, String sItemName, String[] eatingTextures) {
+		super(iItemID, iHungerHealed, fSaturationModifier, bWolfMeat, sItemName, eatingTextures);
+	}
+    
+    public SEAItemFoodBowl(int iItemID, int iHungerHealed, float fSaturationModifier, String sItemName, String[] eatingTextures) {
+    	super(iItemID, iHungerHealed, fSaturationModifier, sItemName, eatingTextures);
 	}
 
 	@Override
