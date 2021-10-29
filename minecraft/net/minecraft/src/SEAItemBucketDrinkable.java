@@ -1,37 +1,41 @@
 package net.minecraft.src;
 
-public class SEAItemFood extends FCItemFood {
-
+public class SEAItemBucketDrinkable extends FCItemBucketDrinkable {
+	
 	static public final int m_iProgressTimeInterval = 5;
-
-	private static String sItemName;
-
-	private static float fSaturationModifier;
 
 	private Icon[] iconArray; 
 	public String[] eatingProgressArray;
-
-	public SEAItemFood( int iItemID, int iHungerHealed, float fSaturationModifier, boolean bWolfMeat, String sItemName, String[] eatingTextures )
+	private int blockID;
+	
+	public SEAItemBucketDrinkable( int iItemID, int iHungerHealed, float fSaturationModifier, String sItemName, String[] eatingTextures, int blockID )
     {
-        super( iItemID, iHungerHealed, fSaturationModifier, bWolfMeat, sItemName );
+        super(iItemID, iHungerHealed, fSaturationModifier);
         setMaxDamage( 0 ); //Disable progress bar
         setUnlocalizedName( sItemName );
         this.eatingProgressArray = eatingTextures;
+        this.blockID = blockID;
     }
+    //FCBucket
     
-    public SEAItemFood( int iItemID, int iHungerHealed, float fSaturationModifier, boolean bWolfMeat, String sItemName, boolean bZombiesConsume , String[] eatingTextures )
+    @Override
+    public int getBlockID()
     {
-        super( iItemID, iHungerHealed, fSaturationModifier, bWolfMeat, sItemName, bZombiesConsume );
-        setMaxDamage( 0 ); //Disable progress bar
-        setUnlocalizedName( sItemName );
-        this.eatingProgressArray = eatingTextures;
-    } 
+        return this.blockID;
+    }    
     
-    public SEAItemFood(int iItemID, int iHungerHealed) {
-    	super( iItemID, iHungerHealed, fSaturationModifier, false, sItemName );
-    	setUnlocalizedName( sItemName );
-	}
-
+    @Override
+    public boolean DoesConsumeContainerItemWhenCrafted( Item containerItem )
+    {
+    	if ( containerItem.itemID == Item.bucketEmpty.itemID )
+    	{
+    		return true;
+    	}
+    	
+    	return false;
+    }    
+    
+    //SEA
 	@Override
     public void UpdateUsingItem( ItemStack stack, World world, EntityPlayer player )
     {
@@ -73,6 +77,12 @@ public class SEAItemFood extends FCItemFood {
 			stack.setItemDamage(0);
 		}
 		
+		//FC Bucket
+		if ( !world.isRemote )
+        {
+            player.clearActivePotions();
+        }
+		
 		return super.onEaten(stack, world, player);
 	}
 
@@ -93,6 +103,6 @@ public class SEAItemFood extends FCItemFood {
 	@Override 
 	public Icon getIconFromDamage(int par1) { 
 		return this.iconArray[par1]; 
-	} 
-
+	}
+	
 }
