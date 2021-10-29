@@ -3,6 +3,8 @@
 
 This Addon for BTW adds a small visual enhancement. While holding down right click to eat a food item the texture will progressivly change to show the progress of eating.
 
+_WARNING: This Add-on is currently NOT compatible with Deco._
+
 
 <details>
 <summary>Animations</summary>
