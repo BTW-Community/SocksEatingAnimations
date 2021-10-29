@@ -3,6 +3,13 @@
 
 This Addon for BTW adds a small visual enhancement. While holding down right click to eat a food item the texture will progressivly change to show the progress of eating.
 
+
+<details>
+<summary>Animations</summary>
+<br>
+<img src="https://user-images.githubusercontent.com/25046819/139502571-a6ec38aa-2295-4c70-b357-03afd14efe45.gif">
+</details>
+
 # Credits
 
 Inspiration by: [Eating Animation (Fabric)](https://www.curseforge.com/minecraft/mc-mods/eating-animation-fabric) 
