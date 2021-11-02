@@ -24,11 +24,8 @@ public class SocksEatingAnimationsAddon extends AddonExt {
 	@Override
 	public void Initialize() {
 		
-//		AddEntityMappings();
-//		ReplaceEntityMappings();
-//		AddEntityRenderer();	
-//		AddBiomeSpawn();
-//		SocksMobsDefs.addDefinitions(); //add blocks and items
+		SEADecoIntegration.init();
+		SEADefs.addDefinitions(); //add blocks and items
 	}
 	
 	public String GetLanguageFilePrefix()
