@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "btw.community.sockthing.sockseatinganimations.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ItemMixin",
+    "ItemStackMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
