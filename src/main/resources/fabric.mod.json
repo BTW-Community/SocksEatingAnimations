@@ -4,13 +4,13 @@
   "version": "${version}",
 
   "name": "Sock's Eating Animations",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "This Addon for BTW adds a small visual enhancement: while eating a food item the texture will progressivly change to show the progress of eating that item.",
   "authors": [
-    "Me!"
+    "Sockthing"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/BTW-Community/SocksEatingAnimations",
+    "sources": "https://github.com/BTW-Community/SocksEatingAnimations"
   },
 
   "license": "CC0-1.0",
