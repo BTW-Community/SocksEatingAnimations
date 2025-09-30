@@ -3,6 +3,8 @@ package btw.community.sockthing.sockseatinganimations.mixin;
 import btw.community.sockthing.sockseatinganimations.animation.AnimatedFoodRegistry;
 import btw.item.items.BucketItemDrinkable;
 import btw.item.items.PotionItem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.src.IconRegister;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemFood;
@@ -14,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Item.class)
 public class ItemMixin {
+
+    @Environment(EnvType.CLIENT)
     @Inject(
             method = "registerIcons",
             at = @At("TAIL")

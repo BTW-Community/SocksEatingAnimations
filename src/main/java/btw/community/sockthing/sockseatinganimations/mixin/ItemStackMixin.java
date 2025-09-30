@@ -1,6 +1,8 @@
 package btw.community.sockthing.sockseatinganimations.mixin;
 
 import btw.community.sockthing.sockseatinganimations.animation.AnimatedFoodRegistry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,6 +21,7 @@ public abstract class ItemStackMixin {
 
     @Shadow private EntityItemFrame itemFrame;
 
+    @Environment(EnvType.CLIENT)
     @Inject(
             method = "getIconIndex",
             at = @At("HEAD"),
