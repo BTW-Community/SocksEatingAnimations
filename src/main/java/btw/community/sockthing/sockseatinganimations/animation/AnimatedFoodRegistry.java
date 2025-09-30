@@ -75,38 +75,4 @@ public class AnimatedFoodRegistry {
             }
         }
     }
-
-    public static int initGetAnimationFrameCount2(String name) {
-        ITexturePack pack = Minecraft.getMinecraft().texturePackList.getSelectedTexturePack();
-
-        int frameCount = 0;
-        InputStream stream = null;
-
-        try {
-            while (true) {
-                String texturePath = TileLoader.getOverridePath("", "/textures/items/", name + "_" + (frameCount + 1), ".png");
-
-                // ✅ Use pack.fileExists(...) if available
-                if (!pack.func_98138_b(texturePath, false)) { // in MCP this was fileExists()
-                    break; // stop immediately if the *pack itself* doesn’t contain it
-                }
-                stream = pack.getResourceAsStream(texturePath);
-                if (stream == null) {
-                    break; // should not happen, but extra safety
-                }
-
-                frameCount++;
-                stream.close();
-                stream = null;
-            }
-
-            return frameCount;
-        } catch (Exception e) {
-            return 0; // treat error as "no animation"
-        } finally {
-            if (stream != null) {
-                try { stream.close(); } catch (IOException ignored) {}
-            }
-        }
-    }
 }
