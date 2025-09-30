@@ -25,8 +25,11 @@ public class ItemMixin {
             int frames = AnimatedFoodRegistry.initGetAnimationFrameCount(thisItem);
 
             if (frames > 0) {
-                System.out.println("[Sock's Eating Animations] Found " + frames + " Frames of Food Animation Textures for: " + thisItem.getUnlocalizedName().substring(5) );
+//                System.out.println("[Sock's Eating Animations] Found " + frames + " Frames of Food Animation Textures for: " + thisItem.getUnlocalizedName().substring(5) );
                 AnimatedFoodRegistry.registerIcons(thisItem, reg, frames + 1, thisItem.getUnlocalizedName().substring(5));
+            }
+            else {
+                System.out.println("[Sock's Eating Animations] Skipping: " + thisItem.getUnlocalizedName().substring(5) );
             }
         }
     }
